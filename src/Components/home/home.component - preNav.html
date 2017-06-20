@@ -1,0 +1,128 @@
+
+<style>
+	.div-element {
+	   float: left;
+	   margin: 10px;
+	   padding: 10px;
+	   width:  100%;
+	   max-width: 300px;
+	   height: 300px;
+	   border: 1px solid black;
+	}   
+
+	.listStyle {
+		list-style-type:inside;
+		position:relative;
+		right: auto;
+		left: 10px;
+	}
+
+	li.listStyle {
+		color: white;
+	}
+
+	.topBanner {
+		background-color: #dedede;
+		float: left;
+		width: 100vw;
+	}
+
+	.navBanner {
+		background-color: #dedede;
+		float: left;
+		padding-right: 10px;
+		height: 100vh;
+	}
+
+	.contentPanel{
+		margin-left: 0px;
+	}
+
+	.dropDownBoxes{
+		/*float:left;*/
+	}
+</style>
+
+<meta name="viewport" content="width=device-width, minimumscale=1.0, maximum-scale=1.0" />
+
+<div id="wrapper">
+	<div class = "topBanner"><a href="/"  id="logo"></a> 
+	<svg ng-click="deals.doSomething()"height="32px" id="Layer_1" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/></svg>
+	</div>
+
+	<div class = "navBanner">
+		<ul>
+			<li> <label>
+					<input type="checkbox" value="Broadband" ng-model="deals.showBroadband" ng-change="deals.displayDeals()"> Broadband
+				</label>
+			</li>
+			<li> 
+				<label>
+					<input type="checkbox" value="TV"  ng-model="deals.showTVbool" ng-change="deals.displayDeals()"> TV
+				</label>
+			</li>
+			<li> 
+				<label>
+					<input type="checkbox" value="Mobile" ng-model="deals.showMobile" ng-change="deals.displayDeals()"> Mobile
+				</label>
+			</li>
+		</ul>
+
+		<label class="dropDownBoxes" ng-show= "deals.showBroadband"> Speed</label><br>
+		<select class="dropDownBoxes" ng-show= "deals.showBroadband" ng-model="deals.broadbandSpeed" ng-change="deals.displayDeals()">
+			<option value="0" selected="selected">Any</option>
+			<option value="17">17MB</option>
+			<option value="52">52MB</option>
+		</select>
+		<div>
+			<label class="dropDownBoxes" ng-show= "deals.showMobile"> Mobile Data</label><br>
+			<select class="dropDownBoxes" ng-show= "deals.showMobile" ng-model="deals.mobileData" 
+			ng-change="deals.displayDeals()">
+				<option value="0" selected="selected"> Any </option>
+				<option value="2">2GB</option>
+				<option value="5">5GB</option>
+			</select>
+		</div>
+	</div>
+
+
+	<div>
+
+	<table class ="contentPanel">
+		<thead>
+			<tr> 
+				<th> About</th>
+				<th> Contract Length</th>
+				<th> Speed/usage</th>
+				<th> Offer</th>
+				<th> TV</th>
+				<th> Mobile</th>
+				<th> Cost</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat= "deal in deals.dealsToDisplay"> 
+				<td> {{deal.title}}</td>
+				<td> {{deal.contractLength}}</td>
+				<td> {{deal.speed.label}} <br> {{deal.usage.label}}</td>
+				<td> <img ng-src="{{deal.offer.smallLogo}}"></td>
+				<td>
+					<li class ="listStyle" ng-repeat = "channel in deal.popularChannels"> 
+						<img ng-src="{{channel.logo}}"/>
+					</li>
+				</td>
+				<td> 
+					<ul ng-show= "deals.showMobile" class="listStyle">
+						<li>Data: {{deal.mobile.data.label}}</li>
+						<li>Minutes: {{deal.mobile.minutes.label}}</li>
+						<li>Texts: {{deal.mobile.texts.label}}</li>
+						<li>Connection: {{deal.mobile.connectionType.label}}</li>
+					</ul>
+				</td>
+				<td> {{deals.calculateTotalCost(deal.prices)}}</td>
+				
+			</tr>
+		</tbody>
+	</table>
+	</div>
+</div>

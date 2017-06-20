@@ -1,0 +1,66 @@
+
+	/* For large windows*/
+    @media screen and (max-width: 3000px) {
+        .listStyle {
+            list-style-type: none; /* Don't display bullet points'*/
+            position: relative;
+            right: auto;
+            left: 10px;
+        }
+
+        li.listStyle {
+            color: white;
+        }
+
+        .topBanner {
+            background-color: #dedede;
+            float: left;
+            width: 100%;
+        }
+
+        .navBanner {
+            background-color: #dedede;
+            float: left;
+            padding-right: 10px;
+            height: 100vh;
+            /*display: none; */
+        }
+
+        .navButton, .mobileContentPanel {
+            display: none;
+        }
+
+        .contentPanel {
+            width: 100%;
+        }
+    }
+	/* For mobile windows */
+    @media screen and (max-width: 480px) {
+        .navButton {
+            display: inline;
+            float: right;
+        }
+        .navBanner {
+            background-color: #333;
+            color: white;
+            display: block;
+            height: 100%;
+
+        }
+        .contentPanel {
+            display: none;
+        }
+        .mobileContentPanel {
+            display: block;
+            clear: both;
+        }
+        .dealBlock {
+            display: block;
+            background-color: #e6e6e6;
+            list-style-type: none;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 5px 0px 5px 5px;
+            box-shadow: 10px 5px 10px grey;
+        }
+    }
