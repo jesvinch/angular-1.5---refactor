@@ -31,10 +31,10 @@
 			<option value="17">17MB</option>
 			<option value="52">52MB</option>
 		</select>
-		<div>
+		<div class="dropDownBoxes">
 			<label class="dropDownBoxes" ng-show= "deals.showMobile"> Mobile Data</label><br>
 			<select class="dropDownBoxes" ng-show= "deals.showMobile" ng-model="deals.mobileData" 
-			ng-change="deals.displayDeals()">
+			            ng-change="deals.displayDeals()">
 				<option value="0" selected="selected"> Any </option>
 				<option value="2">2GB</option>
 				<option value="5">5GB</option>
