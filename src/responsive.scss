@@ -23,7 +23,9 @@
             float: left;
             padding-right: 10px;
             height: 100vh;
-            /*display: none; */
+            position: relative;
+            left: 40px;
+            margin-right: 70px;
         }
 
         .navButton, .mobileContentPanel {
@@ -32,6 +34,10 @@
 
         .contentPanel {
             width: 100%;
+        }
+
+        tr td {
+            text-align: center;
         }
     }
 	/* For mobile windows */
