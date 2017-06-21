@@ -142,28 +142,37 @@ describe ("dataService test", () =>{
 	});
 
 	it('BroadBandOnly deal with 52MB speed returns 1 deal', () =>{
-		var result = mockDataService.broadBandOnly(deals, 52);
+	    var result = mockDataService.broadBandOnly(deals, 52);
+
+	    expect(result[0]).toBeDefined();
 		expect(result[0].title).toBe('BroadBand Only');
 	});
 
 	it('BroadBand and TV deal returns 1 deal', () =>{
 		var result = mockDataService.broadbandAndTV(deals, 52);
 
+		expect(result[0]).toBeDefined();
 		expect(result[0].title).toBe('Total Entertainment + Unlimited Infinity 2 + Weekend Calls');
 	});
 
 	it('TVOnly returns 1 deal', () =>{
-		var result = mockDataService.tvOnlyDeal(deals);
+	    var result = mockDataService.tvOnlyDeal(deals);
+
+	    expect(result[0]).toBeDefined();
 		expect(result[0].title).toBe('TV only');
 	});
 
 	it('BroadBand and Mobile returns 1 deal', () =>{
-		var result = mockDataService.broadbandAndMobile(deals, 17, 5);
+	    var result = mockDataService.broadbandAndMobile(deals, 17, 5);
+
+	    expect(result[0]).toBeDefined();
 		expect(result[0].title).toBe('Broadband and Mobile')
 	});
 
 	it('TV and Mobile returns 1 deal', () =>{
-		var result = mockDataService.tVAndMobile(deals, 5);
+	    var result = mockDataService.tVAndMobile(deals, 5);
+
+	    expect(result[0]).toBeDefined();
 		expect(result[0].title).toBe('Mobile and TV');
 	});
 

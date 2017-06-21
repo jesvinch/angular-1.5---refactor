@@ -71,7 +71,7 @@ import dataService from './data.service';
             }
 	    }
 
-        /* Attempt at fixing nav-bar disappearing on window resize - aka going from mobile view to full window view*/
+        /* Attempt at fixing nav-bar disappearing on window resize - going from mobile view to full window view*/
 	    angular.element($window).bind('resize', () => {
 	        var width = $window.innerWidth;
 	        if (width > 480) {

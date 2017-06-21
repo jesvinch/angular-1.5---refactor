@@ -8,11 +8,12 @@
     </div>
 
 	<nav class ="navBanner" ng-show="deals.showNavBar">
-		<ul>
-			<li> <label>
-					<input type="checkbox" value="Broadband" ng-model="deals.showBroadband" ng-change="deals.displayDeals()"> Broadband
-				</label>
-			</li>
+		<ul class ="navBannerList">
+		    <li>
+		         <label>
+		            <input type="checkbox" value="Broadband" ng-model="deals.showBroadband" ng-change="deals.displayDeals()"> Broadband
+		        </label>
+		    </li>
 			<li> 
 				<label>
 					<input type="checkbox" value="TV"  ng-model="deals.showTVbool" ng-change="deals.displayDeals()"> TV
@@ -24,16 +25,17 @@
 				</label>
 			</li>
 		</ul>
-
-		<label class="dropDownBoxes" ng-show= "deals.showBroadband"> Speed</label><br>
-		<select class="dropDownBoxes" ng-show= "deals.showBroadband" ng-model="deals.broadbandSpeed" ng-change="deals.displayDeals()">
-			<option value="0" selected="selected">Any</option>
-			<option value="17">17MB</option>
-			<option value="52">52MB</option>
-		</select>
+        <div class="dropDownBoxes">
+            <label ng-show="deals.showBroadband"> Speed</label><br>
+            <select ng-show="deals.showBroadband" ng-model="deals.broadbandSpeed" ng-change="deals.displayDeals()">
+                <option value="0" selected="selected">Any</option>
+                <option value="17">17MB</option>
+                <option value="52">52MB</option>
+            </select>
+        </div>
 		<div class="dropDownBoxes">
-			<label class="dropDownBoxes" ng-show= "deals.showMobile"> Mobile Data</label><br>
-			<select class="dropDownBoxes" ng-show= "deals.showMobile" ng-model="deals.mobileData" 
+			<label  ng-show= "deals.showMobile"> Mobile Data</label><br>
+			<select  ng-show= "deals.showMobile" ng-model="deals.mobileData" 
 			            ng-change="deals.displayDeals()">
 				<option value="0" selected="selected"> Any </option>
 				<option value="2">2GB</option>

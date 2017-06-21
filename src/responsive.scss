@@ -8,8 +8,13 @@
             left: 10px;
         }
 
-        li.listStyle {
+        li.listStyle, .navBannerList {
+            list-style-type: none;
             color: white;
+        }
+
+        .navBannerList label{
+            color: black;
         }
 
         .topBanner {
@@ -48,9 +53,11 @@
         }
         .navBanner {
             background-color: #333;
-            color: white;
             display: block;
             height: 100%;
+        }
+        .navBannerList label{
+            color: white;
         }
         .contentPanel {
             display: none;

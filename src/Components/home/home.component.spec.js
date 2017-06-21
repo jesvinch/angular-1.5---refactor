@@ -38,18 +38,19 @@ describe('<home/>', () =>{
 
 		expect(ctrl.deals).toBeDefined();
 		expect(ctrl.deals[0].name).toBe('x');
-  }); 
+      }); 
 
 	  /* With further data setup we can test all the possible paths in 'if' loop of displayDeals() function. 
-	  	It would just be repetition of below logic*/
-	  it('When showMobile is true ensure that only mobile only deals are returned', function() {
+	  	It would just be repetition of below logic with similar data setup done in data.service.spec.js*/
+	  it('When showMobile is true ensure that only mobile only deals are returned', function () {
 
 		const ctrl = $componentController('home', null, {});
 		ctrl.showMobile = true;
 		ctrl.displayDeals();
 
+		expect(ctrl.dealsToDisplay).toBeDefined();
 		expect(ctrl.dealsToDisplay[0].title).toBe('Mocked deal');
-  });
+      });
 
   
 });
