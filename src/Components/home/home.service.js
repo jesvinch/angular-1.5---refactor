@@ -7,7 +7,6 @@ import angular from 'angular';
 			{
 				return $http.get('/assets/deals.json').then(result=>result.data.deals)
 			}
-			
 		}
 	};
 	var module = angular.module("app")

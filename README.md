@@ -1,4 +1,4 @@
-# DecisionTech AngularJs Seed
+# AngularJs Seed
 
 ## Entry points
 * src/main.js
